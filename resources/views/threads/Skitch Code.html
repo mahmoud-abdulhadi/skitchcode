@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://skitchcode.io/skitches/eborer/35 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" id="alertifyCSS">.alertify-logs>*{padding:12px 24px;color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,.2);border-radius:1px}.alertify-logs>*,.alertify-logs>.default{background:rgba(0,0,0,.8)}.alertify-logs>.error{background:rgba(244,67,54,.8)}.alertify-logs>.success{background:rgba(76,175,80,.9)}.alertify{position:fixed;background-color:rgba(0,0,0,.3);left:0;right:0;top:0;bottom:0;width:100%;height:100%;z-index:1}.alertify.hide{opacity:0;pointer-events:none}.alertify,.alertify.show{box-sizing:border-box;transition:all .33s cubic-bezier(.25,.8,.25,1)}.alertify,.alertify *{box-sizing:border-box}.alertify .dialog{padding:12px}.alertify .alert,.alertify .dialog{width:100%;margin:0 auto;position:relative;top:50%;transform:translateY(-50%)}.alertify .alert>*,.alertify .dialog>*{width:400px;max-width:95%;margin:0 auto;text-align:center;padding:12px;background:#fff;box-shadow:0 2px 4px -1px rgba(0,0,0,.14),0 4px 5px 0 rgba(0,0,0,.098),0 1px 10px 0 rgba(0,0,0,.084)}.alertify .alert .msg,.alertify .dialog .msg{padding:12px;margin-bottom:12px;margin:0;text-align:left}.alertify .alert input:not(.form-control),.alertify .dialog input:not(.form-control){margin-bottom:15px;width:100%;font-size:100%;padding:12px}.alertify .alert input:not(.form-control):focus,.alertify .dialog input:not(.form-control):focus{outline-offset:-2px}.alertify .alert nav,.alertify .dialog nav{text-align:right}.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button),.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button){background:transparent;box-sizing:border-box;color:rgba(0,0,0,.87);position:relative;outline:0;border:0;display:inline-block;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;padding:0 6px;margin:6px 8px;line-height:36px;min-height:36px;white-space:nowrap;min-width:88px;text-align:center;text-transform:uppercase;font-size:14px;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:2px}.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):active,.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):hover,.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):active,.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):hover{background-color:rgba(0,0,0,.05)}.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):focus,.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):focus{border:1px solid rgba(0,0,0,.1)}.alertify .alert nav button.btn,.alertify .dialog nav button.btn{margin:6px 4px}.alertify-logs{position:fixed;z-index:1}.alertify-logs.bottom,.alertify-logs:not(.top){bottom:16px}.alertify-logs.left,.alertify-logs:not(.right){left:16px}.alertify-logs.left>*,.alertify-logs:not(.right)>*{float:left;transform:translateZ(0);height:auto}.alertify-logs.left>.show,.alertify-logs:not(.right)>.show{left:0}.alertify-logs.left>*,.alertify-logs.left>.hide,.alertify-logs:not(.right)>*,.alertify-logs:not(.right)>.hide{left:-110%}.alertify-logs.right{right:16px}.alertify-logs.right>*{float:right;transform:translateZ(0)}.alertify-logs.right>.show{right:0;opacity:1}.alertify-logs.right>*,.alertify-logs.right>.hide{right:-110%;opacity:0}.alertify-logs.top{top:0}.alertify-logs>*{box-sizing:border-box;transition:all .4s cubic-bezier(.25,.8,.25,1);position:relative;clear:both;backface-visibility:hidden;perspective:1000;max-height:0;margin:0;padding:0;overflow:hidden;opacity:0;pointer-events:none}.alertify-logs>.show{margin-top:12px;opacity:1;max-height:1000px;padding:12px;pointer-events:auto}</style>
+	<meta name="csrf-token" content="FkWydmMAg3mR2yGd2Z2AwI2aEy2YQnCWdHjEd5VR">
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/app.css">
+
+	
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/codemirror.css">
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/monokai.css">
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/material.css">
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/dracula.css">
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/font-awesome.min.css">
+	<link rel="stylesheet" href="./Skitch Code_files/fullscreen.css">
+	<link rel="stylesheet" href="./Skitch Code_files/show-hint.css">
+	<link rel="stylesheet" href="./Skitch Code_files/lint.css">
+	<link rel="stylesheet" href="./Skitch Code_files/foldgutter.css">
+	<link rel="stylesheet" href="./Skitch Code_files/simplescrollbars.css">
+	<link href="./Skitch Code_files/jquery.splitter.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./Skitch Code_files/code.css">
+	<link rel="stylesheet" href="./Skitch Code_files/3024-day.css">
+<link rel="stylesheet" href="./Skitch Code_files/3024-night.css">
+<link rel="stylesheet" href="./Skitch Code_files/abcdef.css">
+<link rel="stylesheet" href="./Skitch Code_files/ambiance.css">
+<link rel="stylesheet" href="./Skitch Code_files/base16-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/bespin.css">
+<link rel="stylesheet" href="./Skitch Code_files/base16-light.css">
+<link rel="stylesheet" href="./Skitch Code_files/blackboard.css">
+<link rel="stylesheet" href="./Skitch Code_files/cobalt.css">
+<link rel="stylesheet" href="./Skitch Code_files/colorforth.css">
+<link rel="stylesheet" href="./Skitch Code_files/dracula(1).css">
+<link rel="stylesheet" href="./Skitch Code_files/duotone-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/duotone-light.css">
+<link rel="stylesheet" href="./Skitch Code_files/eclipse.css">
+<link rel="stylesheet" href="./Skitch Code_files/elegant.css">
+<link rel="stylesheet" href="./Skitch Code_files/erlang-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/hopscotch.css">
+<link rel="stylesheet" href="./Skitch Code_files/icecoder.css">
+<link rel="stylesheet" href="./Skitch Code_files/isotope.css">
+<link rel="stylesheet" href="./Skitch Code_files/lesser-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/liquibyte.css">
+<link rel="stylesheet" href="./Skitch Code_files/material(1).css">
+<link rel="stylesheet" href="./Skitch Code_files/mbo.css">
+<link rel="stylesheet" href="./Skitch Code_files/mdn-like.css">
+<link rel="stylesheet" href="./Skitch Code_files/midnight.css">
+<link rel="stylesheet" href="./Skitch Code_files/monokai(1).css">
+<link rel="stylesheet" href="./Skitch Code_files/neat.css">
+<link rel="stylesheet" href="./Skitch Code_files/neo.css">
+<link rel="stylesheet" href="./Skitch Code_files/night.css">
+<link rel="stylesheet" href="./Skitch Code_files/oceanic-next.css">
+<link rel="stylesheet" href="./Skitch Code_files/panda-syntax.css">
+<link rel="stylesheet" href="./Skitch Code_files/paraiso-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/paraiso-light.css">
+<link rel="stylesheet" href="./Skitch Code_files/pastel-on-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/railscasts.css">
+<link rel="stylesheet" href="./Skitch Code_files/rubyblue.css">
+<link rel="stylesheet" href="./Skitch Code_files/seti.css">
+<link rel="stylesheet" href="./Skitch Code_files/shadowfox.css">
+<link rel="stylesheet" href="./Skitch Code_files/solarized.css">
+<link rel="stylesheet" href="./Skitch Code_files/the-matrix.css">
+<link rel="stylesheet" href="./Skitch Code_files/tomorrow-night-bright.css">
+<link rel="stylesheet" href="./Skitch Code_files/tomorrow-night-eighties.css">
+<link rel="stylesheet" href="./Skitch Code_files/ttcn.css">
+<link rel="stylesheet" href="./Skitch Code_files/twilight.css">
+<link rel="stylesheet" href="./Skitch Code_files/vibrant-ink.css">
+<link rel="stylesheet" href="./Skitch Code_files/xq-dark.css">
+<link rel="stylesheet" href="./Skitch Code_files/xq-light.css">
+<link rel="stylesheet" href="./Skitch Code_files/yeti.css">
+
+<link rel="stylesheet" href="./Skitch Code_files/zenburn.css">	<title>Skitch Code</title>
+</head>
+<body>
+		<!-- Modal -->
+		<!-- Modal -->
+<div class="modal fade show" id="htmlSettings" tabindex="-1" role="dialog" aria-labelledby="HTML Settings" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">HTML Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="theme-picker"><h5>Theme:</h5></label>
+                    <select id="theme-picker-html" class="selectpicker form-control">
+                        <option>3024-day</option>
+    <option>3024-night</option>
+    <option>abcdef</option>
+    <option>ambiance</option>
+    <option>base16-dark</option>
+    <option>base16-light</option>
+    <option>bespin</option>
+    <option>blackboard</option>
+    <option>cobalt</option>
+    <option>colorforth</option>
+    <option>dracula</option>
+    <option>duotone-dark</option>
+    <option>duotone-light</option>
+    <option>eclipse</option>
+    <option>elegant</option>
+    <option>erlang-dark</option>
+   
+    <option>hopscotch</option>
+    <option>icecoder</option>
+ 
+    <option>isotope</option>
+    <option>lesser-dark</option>
+    <option>liquibyte</option>
+ 
+    <option>material</option>
+    <option>mbo</option>
+    <option>mdn-like</option>
+    <option>midnight</option>
+    <option>monokai</option>
+    <option>neat</option>
+    <option>neo</option>
+    <option>night</option>
+    <option>oceanic-next</option>
+    <option>panda-syntax</option>
+    <option>paraiso-dark</option>
+    <option>paraiso-light</option>
+    <option>pastel-on-dark</option>
+    <option>railscasts</option>
+    <option>rubyblue</option>
+    <option>seti</option>
+    <option>shadowfox</option>
+    <option>solarized dark</option>
+    <option>solarized light</option>
+    <option>the-matrix</option>
+    <option>tomorrow-night-bright</option>
+    <option>tomorrow-night-eighties</option>
+    <option>ttcn</option>
+    <option>twilight</option>
+    <option>vibrant-ink</option>
+    <option>xq-dark</option>
+    <option>xq-light</option>
+    <option>yeti</option>
+    <option>zenburn</option>
+</select>
+                   
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary settings-btn settings-save-btn">Save Settings</button>
+                <button type="button" class="btn btn-secondary settings-btn settings-close-btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>		<!-- Modal -->
+<div class="modal fade show" id="cssSettings" tabindex="-1" role="dialog" aria-labelledby="HTML Settings" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CSS Editor Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="theme-picker"><h5>Theme:</h5></label>
+                    <select id="theme-picker-css" class="selectpicker form-control">
+                        <option>3024-day</option>
+    <option>3024-night</option>
+    <option>abcdef</option>
+    <option>ambiance</option>
+    <option>base16-dark</option>
+    <option>base16-light</option>
+    <option>bespin</option>
+    <option>blackboard</option>
+    <option>cobalt</option>
+    <option>colorforth</option>
+    <option>dracula</option>
+    <option>duotone-dark</option>
+    <option>duotone-light</option>
+    <option>eclipse</option>
+    <option>elegant</option>
+    <option>erlang-dark</option>
+   
+    <option>hopscotch</option>
+    <option>icecoder</option>
+ 
+    <option>isotope</option>
+    <option>lesser-dark</option>
+    <option>liquibyte</option>
+ 
+    <option>material</option>
+    <option>mbo</option>
+    <option>mdn-like</option>
+    <option>midnight</option>
+    <option>monokai</option>
+    <option>neat</option>
+    <option>neo</option>
+    <option>night</option>
+    <option>oceanic-next</option>
+    <option>panda-syntax</option>
+    <option>paraiso-dark</option>
+    <option>paraiso-light</option>
+    <option>pastel-on-dark</option>
+    <option>railscasts</option>
+    <option>rubyblue</option>
+    <option>seti</option>
+    <option>shadowfox</option>
+    <option>solarized dark</option>
+    <option>solarized light</option>
+    <option>the-matrix</option>
+    <option>tomorrow-night-bright</option>
+    <option>tomorrow-night-eighties</option>
+    <option>ttcn</option>
+    <option>twilight</option>
+    <option>vibrant-ink</option>
+    <option>xq-dark</option>
+    <option>xq-light</option>
+    <option>yeti</option>
+    <option>zenburn</option>
+</select>
+                   
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary settings-btn settings-save-btn">Save Settings</button>
+                <button type="button" class="btn btn-secondary settings-btn settings-close-btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>		<!-- Modal -->
+<div class="modal fade show" id="jsSettings" tabindex="-1" role="dialog" aria-labelledby="HTML Settings" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">JavaScript Editor Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="theme-picker"><h5>Theme:</h5></label>
+                    <select id="theme-picker-js" class="selectpicker form-control">
+                        <option>3024-day</option>
+    <option>3024-night</option>
+    <option>abcdef</option>
+    <option>ambiance</option>
+    <option>base16-dark</option>
+    <option>base16-light</option>
+    <option>bespin</option>
+    <option>blackboard</option>
+    <option>cobalt</option>
+    <option>colorforth</option>
+    <option>dracula</option>
+    <option>duotone-dark</option>
+    <option>duotone-light</option>
+    <option>eclipse</option>
+    <option>elegant</option>
+    <option>erlang-dark</option>
+   
+    <option>hopscotch</option>
+    <option>icecoder</option>
+ 
+    <option>isotope</option>
+    <option>lesser-dark</option>
+    <option>liquibyte</option>
+ 
+    <option>material</option>
+    <option>mbo</option>
+    <option>mdn-like</option>
+    <option>midnight</option>
+    <option>monokai</option>
+    <option>neat</option>
+    <option>neo</option>
+    <option>night</option>
+    <option>oceanic-next</option>
+    <option>panda-syntax</option>
+    <option>paraiso-dark</option>
+    <option>paraiso-light</option>
+    <option>pastel-on-dark</option>
+    <option>railscasts</option>
+    <option>rubyblue</option>
+    <option>seti</option>
+    <option>shadowfox</option>
+    <option>solarized dark</option>
+    <option>solarized light</option>
+    <option>the-matrix</option>
+    <option>tomorrow-night-bright</option>
+    <option>tomorrow-night-eighties</option>
+    <option>ttcn</option>
+    <option>twilight</option>
+    <option>vibrant-ink</option>
+    <option>xq-dark</option>
+    <option>xq-light</option>
+    <option>yeti</option>
+    <option>zenburn</option>
+</select>
+                   
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary settings-btn settings-save-btn">Save Settings</button>
+                <button type="button" class="btn btn-secondary settings-btn settings-close-btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>		<!-- Modal -->
+<div class="modal fade show" id="globalSettings" tabindex="-1" role="dialog" aria-labelledby="HTML Settings" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><span class="fa fa-cogs"></span> Global Editor Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="font-size"><h5>Font-Size:</h5></label>
+                    <input type="number" id="font-size">
+                   
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary settings-btn settings-save-btn">Save Settings</button>
+                <button type="button" class="btn btn-secondary settings-btn settings-close-btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>			<!-- Confirm Deletion Modal -->
+			<div class="modal fade show confirm" id="deleteSkitch" tabindex="-1" role="dialog" aria-labelledby="Delete Skitch">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      
+			      <div class="modal-body">
+			        <h2>Are you sure you want to Delete new HTML Page?</h2>
+			        <p>This Skitch Will be Permenantly Deleted.</p>
+			        <form id="delete-skitch-form" action="http://skitchcode.io/skitch/35" method="POST">
+			        	<input type="hidden" name="_token" value="FkWydmMAg3mR2yGd2Z2AwI2aEy2YQnCWdHjEd5VR">
+			        	<input type="hidden" name="_method" value="DELETE">
+			        <button type="reset" class="btn cancel-button mr-3" data-dismiss="modal">Cancel</button>
+			        
+			        <button type="submit" class="btn close-file" id="confirm-delete-skitch">Delete Skitch</button>
+			        </form>
+			      </div>
+			      
+			    </div>
+			  </div>
+	</div>
+	<!-- Main Content -->
+	<div class="row">
+		<div class="col-md-4"><h2>new HTML Page</h2></div>
+		<div class="col-md-4"></div>
+		<div class="col-md-4"><h2>Created By Mahmoud Hadi</h2></div>
+	</div>
+	<div class="row">
+		
+		<div class="col" id="control-panel">
+			<button data-target="#globalSettings" data-toggle="modal" id="settings-btn-show">
+				<span class="fa fa-gear"></span> Settings
+
+			</button>
+			<div id="auto-check-choice">
+				<span id="check-label">Auto Preview</span>
+				<div class="material-switch" style="display:inline">
+                    <input id="runChoice" name="runChoice" type="checkbox">
+                    <label for="runChoice" class="label-primary"></label>
+             	</div>
+             </div>
+			
+				<button class="btn btn-md" id="saveBtn"><span class="fa fa-cloud"></span>&nbsp;Save</button>
+		
+			
+			<button class="btn btn-md" id="resetBtn"><span class="fa fa-eraser"></span>&nbsp;Reset</button>
+			<button class="btn btn-dark btn-md" id="btnRun"><span class="fa fa-terminal"></span>&nbsp;Run</button>
+			<button class="btn btn-md" id="refreshBtn"><span class="fa fa-refresh"></span>&nbsp;Refresh</button>
+		</div>
+	</div>
+	<div id="editorContainer" class="splitter_panel" style="height: 1000px;">
+		<div class="row no-gutters top_panel" id="editorPlay" style="height: 330.5px;">
+			
+			<div class="col" id="editor1">	
+			<div class="editorHeader">
+				<h1 class="editor-title">HTML</h1>
+			<a type="button" href="http://skitchcode.io/skitches/eborer/35#htmlSettings" data-toggle="modal" data-target="#htmlSettings"><span class="fa fa-gear"></span></a>
+			</div>	
+			<textarea class="editor" id="htmlEditor" style="display: none;"></textarea><div class="CodeMirror cm-s-material CodeMirror-wrap CodeMirror-overlayscroll"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 62px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: block; bottom: 0px;"><div style="height: 288.923px; top: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 58px; margin-bottom: -17px; border-right-width: 13px; min-height: 312px; padding-right: 6px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>16</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -58px; width: 58px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">1</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket CodeMirror-matchingtag">&lt;</span><span class="cm-tag CodeMirror-matchingtag">h2</span><span class=" CodeMirror-matchingtag"> </span><span class="cm-attribute CodeMirror-matchingtag">class</span><span class=" CodeMirror-matchingtag">=</span><span class="cm-string CodeMirror-matchingtag">"text-center"</span><span class="cm-tag cm-bracket CodeMirror-matchingtag">&gt;</span>Hello World<span class="cm-tag cm-bracket CodeMirror-matchingtag">&lt;/</span><span class="cm-tag CodeMirror-matchingtag">h2</span><span class="cm-tag cm-bracket CodeMirror-matchingtag">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">4</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">form</span> <span class="cm-attribute">action</span>=<span class="cm-string">"/skitches"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">5</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"form-group"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">6</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">label</span> <span class="cm-attribute">for</span>=<span class="cm-string">""</span><span class="cm-tag cm-bracket">&gt;</span>Title:<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">label</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text"</span> <span class="cm-attribute">class</span>=<span class="cm-string">"form-control"</span><span class="cm-tag cm-bracket">/&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">10</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"form-group"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">11</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">button</span> <span class="cm-attribute">class</span>=<span class="cm-string">"btn btn-danger"</span><span class="cm-tag cm-bracket">&gt;</span>Hacking<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">button</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">form</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 312px;"></div><div class="CodeMirror-gutters" style="height: 325px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+
+			</div>
+
+			<div class="col" id="editor2">
+			<div class="editorHeader">
+				<h1 class="editor-title">CSS</h1>
+			<a type="button" href="http://skitchcode.io/skitches/eborer/35#cssSettings" data-toggle="modal" data-target="#cssSettings"><span class="fa fa-gear"></span></a>
+			</div>
+			<textarea class="editor" id="cssEditor" style="display: none;"></textarea><div class="CodeMirror cm-s-monokai CodeMirror-wrap CodeMirror-overlayscroll"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 62px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 58px; margin-bottom: -17px; border-right-width: 13px; min-height: 179px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -58px; width: 58px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">1</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tag">body</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">padding</span> : <span class="cm-number">5px</span> ; </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">margin</span> : <span class="cm-number">5px</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">5</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 13px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-qualifier">.btn</span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">border-radius</span>:<span class="cm-number">0px</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 179px;"></div><div class="CodeMirror-gutters" style="height: 192px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+
+			</div>
+			<div class="col" id="editor3">
+				<div class="editorHeader">
+					<h1 class="editor-title">JavaScript</h1>
+				<a type="button" href="http://skitchcode.io/skitches/eborer/jsSettings" data-toggle="modal" data-target="#jsSettings"><span class="fa fa-gear"></span></a>
+				</div>
+			<textarea class="editor" id="jsEditor" style="display: none;"></textarea><div class="CodeMirror cm-s-dracula CodeMirror-wrap CodeMirror-overlayscroll CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 42px; left: 133px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 58px; margin-bottom: -17px; border-right-width: 13px; min-height: 65px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 75px; top: 38px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">title</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">'h2'</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -58px; width: 58px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -58px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">3</div><div class="CodeMirror-gutter-elt" style="left: 0px; width: 16px;"><div class="CodeMirror-lint-marker-error"><div class="CodeMirror-lint-marker-multiple"></div></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">title</span><span class=" CodeMirror-lint-mark-error CodeMirror-lint-mark-error">.</span><span class="cm-property">text</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 65px;"></div><div class="CodeMirror-gutters" style="height: 78px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+
+			</div>
+		
+		</div><div class="hsplitter" style="top: 330.5px;"></div>
+
+	<div id="output" class="bottom_panel" style="height: 662.5px;">
+	<iframe src="./Skitch Code_files/saved_resource.html" id="target" scrolling="false" sandbox="allow-popups allow-same-origin allow-scripts"></iframe>
+	
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-12">
+			<div id="footerPanel">
+				
+					<button type="submit" class="btn btn-sm" id="deleteBtn">Delete</button>
+					
+		
+			</div>
+
+	</div>
+</div>
+
+
+
+		
+
+	<script type="text/javascript" src="./Skitch Code_files/codemirror.js.download"></script>
+	<script type="text/javascript" src="./Skitch Code_files/xml.js.download"></script>
+	<script type="text/javascript" src="./Skitch Code_files/css.js.download"></script>
+	<script type="text/javascript" src="./Skitch Code_files/javascript.js.download"></script>
+
+	<script type="text/javascript" src="./Skitch Code_files/split.min.js.download"></script>
+
+	<script src="./Skitch Code_files/emmet.js.download"></script>
+	<script type="text/javascript" src="./Skitch Code_files/app.js.download"></script>
+
+	<script src="./Skitch Code_files/jquery.splitter.js.download"></script>
+	<script src="./Skitch Code_files/fullscreen.js.download"></script>
+	<script src="./Skitch Code_files/xml-fold.js.download"></script>
+	<script src="./Skitch Code_files/closebrackets.js.download"></script>
+
+	<script src="./Skitch Code_files/closetag.js.download"></script>
+	<script src="./Skitch Code_files/matchtags.js.download"></script>
+	<script src="./Skitch Code_files/jshint.js.download"></script>
+	<script src="./Skitch Code_files/lint.js.download"></script>
+	<script src="./Skitch Code_files/javascript-lint.js.download"></script>
+
+	<!-- CSS lint dependencies -->
+	<script src="./Skitch Code_files/csslint.js.download"></script>
+	<script src="./Skitch Code_files/css-lint.js.download"></script>
+
+
+	<!-- HTML Lint Dependecies -->
+	<script src="./Skitch Code_files/htmlhint.js.download"></script>
+	<script src="./Skitch Code_files/html-lint.js.download"></script>
+
+	<script src="./Skitch Code_files/active-line.js.download"></script>
+	<script src="./Skitch Code_files/mark-selection.js.download"></script>
+
+
+
+	<!-- AutoComplete Dependencies --> 
+
+	<script src="./Skitch Code_files/show-hint.js.download"></script>
+
+	<script src="./Skitch Code_files/javascript-hint.js.download"></script>
+
+	<script src="./Skitch Code_files/css-hint.js.download"></script>
+
+	<script src="./Skitch Code_files/html-hint.js.download"></script>
+
+	<script src="./Skitch Code_files/xml-hint.js.download"></script>
+	
+	<script src="./Skitch Code_files/anyword-hint.js.download"></script>
+
+
+	<!-- Code Folding --> 
+	<script src="./Skitch Code_files/foldcode.js.download"></script>
+	<script src="./Skitch Code_files/foldgutter.js.download"></script>
+	<script src="./Skitch Code_files/brace-fold.js.download"></script>
+	<script src="./Skitch Code_files/comment-fold.js.download"></script>
+
+
+	<!-- Scrollbars --> 
+	<script src="./Skitch Code_files/simplescrollbars.js.download"></script>
+	
+
+	<!-- Custome Scripts -->
+	<script type="text/javascript" src="./Skitch Code_files/code.js.download"></script>
+	
+		
+
+		<script>
+
+
+
+
+/*
+
+	filter html attribute of the code object returened from the server */ 
+
+function extractHTML(mode){
+
+
+	var txt = document.createElement('textarea');
+
+	txt.innerHTML = '&quot;&lt;h2 class=\&quot;text-center\&quot;&gt;Hello World&lt;\/h2&gt;\n\n\n&lt;form action=\&quot;\/skitches\&quot;&gt;\n    &lt;div class=\&quot;form-group\&quot;&gt;\n      &lt;label for=\&quot;\&quot;&gt;Title:&lt;\/label&gt;\n      &lt;input type=\&quot;text\&quot; class=\&quot;form-control\&quot;\/&gt;\n    &lt;\/div&gt; \n  \n  &lt;div class=\&quot;form-group\&quot;&gt;\n    &lt;button class=\&quot;btn btn-danger\&quot;&gt;Hacking&lt;\/button&gt;\n  &lt;\/div&gt;\n \n&lt;\/form&gt;\n\n&quot;' ;
+
+
+	pureHTML = txt.value.slice(1,txt.value.length-1); 
+
+
+	return pureHTML ; 
+
+
+}
+
+
+
+function extractCSS(){
+
+
+	var txt = document.createElement('textarea'); 
+
+	txt.innerHTML = '&quot;body {\n  padding : 5px ; \n  margin : 5px;\n}\n.btn{\n  \n  \n  border-radius:0px;\n}&quot;' ; 
+
+
+	pureCSS = txt.value.slice(1,txt.value.length-1) ; 
+
+	return pureCSS ; 
+
+}
+
+function extractJS(){
+
+
+	var txt = document.createElement('textarea'); 
+
+	txt.innerHTML = '&quot;alert(&#039;Hello World&#039;);&quot;' ; 
+
+
+	pureJS = txt.value.slice(1,txt.value.length-1) ; 
+
+	return pureJS ; 
+
+}
+
+
+
+
+
+htmlEditor.getDoc().setValue(extractHTML());	 
+
+cssEditor.getDoc().setValue(extractCSS()); 
+
+
+jsEditor.getDoc().setValue(extractJS()); 
+
+
+</script>
+
+
+
+
+		
+	<script>
+		
+		$('document').ready(runCode);
+
+		$('#deleteBtn').on('click',function(e){
+
+		$('#deleteSkitch').modal();
+
+	});
+
+
+	if(""){
+
+		window.alertify.success("") ; 
+	}
+
+
+	//code to update code using axios 
+
+	function axiosSaveCode(){
+
+
+	}
+
+	$('#saveBtn').on('click',function(){
+
+
+		var url = '/skitch/35' ; 
+		var source = JSON.stringify({
+
+			html :  htmlEditor.getValue(), 
+			css : cssEditor.getValue(), 
+			js :  jsEditor.getValue()
+
+		});
+
+
+		axios.put(url,{code : source})
+			.then(function(response){
+				code = response.data ; 
+
+				htmlCode = code.html ; 
+
+				cssCode = code.css ; 
+
+				jsCode = code.js ; 
+
+
+				htmlEditor.setValue(htmlCode);
+
+				cssEditor.setValue(cssCode);
+
+				jsEditor.setValue(jsCode);
+
+				alertify.success('Skitch Updated Succesfully!!');
+
+
+
+			});
+
+
+	});
+	</script>
+	
+
+
+
+</body></html>

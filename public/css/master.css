@@ -1,0 +1,158 @@
+ .navbar-brand img { 
+
+            height : 45px;
+            width:45px;
+         }
+
+         .bg-black {
+
+            background : #000;
+         }
+
+         .link {
+                font-weight: bold;
+
+         }
+
+         .skitches-link:hover{
+
+                border-bottom: solid 3px #0EBEFF ; 
+         }
+
+         .workspaces-link:hover{
+
+            border-bottom: solid 3px #FCD000 ; 
+         }
+
+         .posts-link:hover{
+
+          border-bottom : solid 3px #47CF73;
+         }
+         .threads-link:hover { 
+
+            border-bottom : solid 3px #AE63E4;
+          }
+          .nav-item{
+
+            margin : 5px;
+          }
+
+          #login-button {
+
+            color : white;
+          }
+
+          #register-button{
+
+            color : white;
+          }
+          span.fa-caret-down{
+
+
+            color : green;
+          }
+          #create-button:hover { 
+              background : white;
+              color : black ;
+
+           }
+          #create-button:active{
+
+            color : black;
+            background : white;
+          }
+
+
+
+          .fa-code,.fa-wpforms{
+
+            color:#0EBEFF;
+            border-radius:5px;
+            padding:5px;
+            background :#000;
+          }
+
+          .new-item{
+
+            font-weight: bold;
+          }
+          .fa-file-code-o,.fa-bookmark{
+
+            color : #FCD000;
+            border-radius:5px;
+            padding:5px;
+            background :#000;
+          }
+
+          .fa-book{
+            color : #47CF73;
+            border-radius:5px;
+            padding:5px;
+            background :#000;
+
+          }
+
+          #manage-menu .fa-tags{
+             color : #AE63E4;
+              border-radius:5px;
+              padding:5px;
+              background :#222;
+
+          }
+
+          .fa-comments,  {
+              color : #AE63E4;
+              border-radius:5px;
+              padding:5px;
+              background :#000;
+
+          }
+
+          .dropdown-menu {
+
+            margin-right:20px;
+          }
+
+          .dropdown-item{
+
+            padding : 15px;
+          }
+
+          .dropdown-menu > p{
+
+            padding:10px;
+          }
+
+          .dropdown-menu > a{
+
+            padding:10px;
+          }
+          .avatar-img{
+
+              border-radius: 40%;
+              width:40px;
+              height:40px;
+          }
+
+          #main-nav {
+
+            height:auto;
+          }
+          .container{
+
+            padding-top:10px;
+
+            padding-bottom: 20px;
+
+
+          }
+
+          .fa-users {
+
+          color : #28A745;
+          }
+
+          body {
+
+            background : #666;
+          }

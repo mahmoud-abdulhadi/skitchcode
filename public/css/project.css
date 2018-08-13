@@ -1,0 +1,704 @@
+body{
+			background : #191919;
+
+			margin:0;
+			padding:0;
+}
+
+
+		
+		#project-header { 
+				background : black;
+				color : white;
+
+				min-height:70px;
+
+				
+		 }
+
+		 #project-description {
+
+			background : #28282B;
+
+			color : #999999;
+
+			padding :20px;
+
+			border : 1px solid #FFF;
+
+			font-family: 'Times New Roman',serif;
+
+		 }
+
+		.edit-icon {
+
+			cursor: pointer ;
+		}
+
+
+		 #project-create-date{
+
+		 	color : white;
+		 }
+
+		 #after-project-tree{
+
+		 	background : #283A3A;
+
+		 	color : #AEAEAE;
+
+		 
+		 	
+		 	font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+		 }
+
+		 #project-tree { 
+				background : #282828;
+
+				color : #BEBEBE;
+
+				font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+
+			
+				
+		  }
+
+		  ul{ 
+				list-style-type: none ; 
+		   }
+		   
+		   .item {
+
+		   	cursor : pointer;
+		   }
+
+
+
+		   .item:hover{
+
+		   		background : #000000;
+		   }
+
+		   .editor {
+
+		   	 resize: none ; 
+
+		   	 width : 100%;
+
+
+		   
+		   }
+		   #tree-controls {
+
+		   	
+		   	background : #171717;
+		  
+
+		   }
+
+		   .addItemInput {
+
+		   	width : 100%;
+
+		   	background : #FFDD40;
+
+		   	border : none;
+		   	padding : 3px 15px ; 
+		  
+		   }
+
+		   #folder-tree  #after-folder-tree{
+
+		   	
+		   	overflow : hidden ; 
+		   	overflow-y : scroll;
+		   	
+		 
+		   }
+
+		   .command-input {
+
+
+		   	 background:#FFDD40;
+		   	 border : none ;
+
+		   	 width:100px;
+
+		   	
+		   }
+
+		   .command {
+
+
+		   		margin-left:18px;
+		   		cursor : pointer;
+		   }
+
+		   .file-list a {
+
+		   	margin-right : 25px;
+		   }
+
+		   .CodeMirror {
+
+		   	height : 100%;
+		   	width : 100%;
+		   }
+
+		   .new-items {
+
+		   	margin : 15px;
+		   }
+
+			
+		   .file-tabs { 
+
+				min-wdith : 100%;
+				background : #222;
+
+				list-style-type: none;
+				padding-left:5px;
+
+				height:40px;
+
+				box-shadow: inset 0 1px 1px 0 black;
+
+				margin : 0;
+
+				box-sizing: border-box;
+		    }
+
+			.file-tab {
+
+				display : inline-block;
+				color :#FFF;
+				height:45px;
+				font-size: 0.95rem;
+				opacity:0.444;
+
+			}
+
+			.file-tabs .active {
+
+				opacity: 1;
+			}
+
+			.file-tab-contents {
+
+				cursor : pointer;
+				background : #171717;
+				border-top : 3px solid transparent;
+			}
+
+			.file-tab-contents.file-html{
+					border-top-color: #ff3c41 ;
+				
+			}
+
+			.file-tab-contents.file-css{
+					border-top-color: #0ebeff ;
+				
+			}
+
+			.file-tab-contents.file-js{
+					border-top-color: #fcd000 ;
+				
+			}
+
+			.file-tab-name {
+
+				color : #FFF;
+				padding: 10px 0 10px 20px;
+				overflow: hidden;
+				max-width: 250px;
+
+				white-space: nowrap;
+    			text-overflow: ellipsis;
+    			display: inline-block;
+    		    user-select: none;
+			}
+
+			.file-tab .close-button {
+
+				width: 11px;
+				height: 11px;
+				padding: 10px 16px;
+				box-sizing: content-box;
+				opacity: 0.8;
+				background: none;
+			    margin-top: 6px;
+			    border: none;
+    			outline: none;
+  				  cursor: pointer;
+  				  vertical-align: top;
+			}
+
+			.change-indicator { 
+					
+					width : 8px ; 
+					height: 8px ;
+					box-sizing: content-box;
+   					background-color: #ffdd40;
+    				border-radius: 4px;
+    				margin: 18px 17px 12px 18px;
+    				position: relative;
+    				vertical-align: top;
+    				display: inline-block;
+			 }
+
+			
+
+			.confirm .modal-dialog {
+
+
+				border: 10px solid #ff3c41;
+				width: 50%;
+				
+
+
+
+
+			}
+
+
+			
+			.confirm .modal-content{
+				
+				border-radius: 0px;
+			}
+
+			.confirm .modal-body{
+
+				border-radius: 0px;
+				background : black;
+				color : white;
+			}
+
+			.btn {
+
+
+				border-radius: 0px;
+			 
+			}
+
+			.cancel-button , .save-changes {
+
+				background : #343436;
+				color : white;
+			}
+
+			.cancel-button:hover ,.save-changes:hover{
+				background : #313131;
+				color:black;
+
+			}
+
+			.close-file {
+
+				background : red;
+				color : white;
+			}
+
+			
+			.close-file:hover{
+				background:#FF3C41;
+				color : black;
+			}
+
+			
+			
+			.control-button {
+
+				background-color : #000;
+
+ 				color : white;
+
+ 				border : 3px solid #565658;
+				
+			}
+
+			.control-button:hover {
+
+
+					background-color :  #565658;
+
+ 					color : white;
+
+ 					border : 3px solid #565658;
+			}
+
+			.control-button:active{ 
+
+ 			 transform: translateY(3px);
+
+  			}
+
+  			.control-button{
+
+  				position: absolute;
+
+  				bottom:10px;
+  			}
+
+
+  			#main-content{
+
+				width : 97%;
+  			}
+
+ #footerPanel {
+ 	
+	width : 104%;
+	background : #444;
+	
+	height : 3em;
+}
+
+#footerPanel button{
+
+
+ 	
+ 	background-color : #A22;
+
+ 	color : white;
+
+ 	border : 3px solid #565658;
+	
+ 
+}
+
+
+#footerPanel button:hover{ 
+
+	 
+ 	background-color :  red;
+
+ 	color : white;
+
+ 	border : 3px solid #565658;
+
+ }
+
+ #footerPanel button:active{ 
+
+ 	 transform: translateY(3px);
+
+  }
+
+
+
+#deleteBtn{
+
+
+	
+}
+
+
+#delete-project-form {
+
+	display: inline ; 
+
+}
+
+
+.fa-cogs{
+
+  color : #FD7F09;
+}
+.save .modal-content{
+  margin-left:-100px;
+  width : 800px;
+  background : white;
+
+  border-radius: 0px;
+
+
+}
+
+.save .modal-body .form-control{
+
+  border-radius: 0 ; 
+  padding : 12px;
+  border : 2px solid #CCC;
+
+}
+
+
+.save .modal-body .form-control:focus{
+
+  background : #333;
+
+  font-weight: bold;
+
+  color :#EEE;
+}
+
+.save .modal-body textarea{
+
+  height : 150px;
+
+  resize: none ; 
+}
+
+
+
+.save .modal-body .btn{
+
+  border-radius: 0 ; 
+  
+}
+
+
+#globalSettings .modal-content{
+
+  border-radius: 0px;
+  width : 800px;
+
+  margin-left: -150px;
+}
+
+
+#project-area{
+  border-left : 5px solid #222;
+  height :100%;
+
+}
+
+
+#globalSettings .modal-body .form-control{
+
+  border-radius: 0 ; 
+  padding : 12px;
+  border : 2px solid #CCC;
+
+}
+
+
+#globalSettings .modal-body .form-control:focus{
+
+  background : #333;
+
+  font-weight: bold;
+
+  color :#EEE;
+}
+
+#globalSettings .modal-body textarea{
+
+  height : 150px;
+
+  resize: none ; 
+}
+
+
+
+#globalSettings .modal-body .btn{
+
+  border-radius: 0 ; 
+  
+}
+.close-modal {
+
+  color : black;
+}
+
+
+
+.selectpicker {
+
+  border-radius : 0px;
+}
+
+.settings-btn {
+
+  border-radius: 0 ; 
+}
+
+.settings-save-btn{
+
+  /*background :  #397D02 ; */
+  position: absolute;
+  left: 10px; 
+}
+.settings-save-btn:hover{
+
+  background :  #61B329 ;
+
+}
+ #after-project-tree{
+	border-top : 2px solid #84329B;
+	border-left :2px solid #84329B;
+	border-bottom: 2px solid #84329B;
+	border-right : 2px solid #84329B;
+
+ }
+
+#project-tree {
+
+	border-top : 2px solid #84329B;
+	border-left :2px solid #84329B;
+	border-bottom: 2px solid #84329B;
+	padding-left:10px;
+	padding-top: 10px;
+}
+
+
+.font-size-control { 
+  border:1px solid #000;
+  padding:5px;
+  margin-right:1em;
+  cursor: pointer;
+
+ }
+
+ .font-size-arrow { 
+
+  color : green;
+  }
+
+  .font-size-control:hover { 
+
+        background : #222;
+
+        color : #FFF;
+  
+   }
+
+  #font-size-up:hover{
+
+
+    font-size:20px;
+
+  }
+
+  #font-size-down:hover{
+
+    font-size:12px;
+  }
+
+  #font-size-down{
+
+    transition-property: font-size ; 
+
+    transition-duration: 1s;
+  }
+
+  #font-size-up {
+
+    transition-property: font-size ; 
+
+    transition-duration: 1s;
+  }
+
+
+
+          .fa-code{
+
+            color:#0EBEFF;
+            border-radius:5px;
+            padding:5px;
+            background :#000;
+          }
+
+          .new-item{
+
+            font-weight: bold;
+          }
+          .fa-file-code-o{
+
+            color : #FCD000;
+            border-radius:5px;
+            padding:5px;
+            background :#000;
+          }
+
+          .fa-book{
+            color : #47CF73;
+            border-radius:5px;
+            padding:5px;
+            background :#000;
+
+          }
+
+          .fa-comments {
+              color : #AE63E4;
+              border-radius:5px;
+              padding:5px;
+              background :#000;
+
+          }
+          .fa-desktop{
+	
+			color : #D11F5D;
+          }
+
+          #avatar-dropdown .dropdown-menu{
+
+          	margin-left : -85px;
+          }
+
+
+#skitch-header.dropdown-item {
+
+
+  background : #FFF;
+
+  border : none ;
+  color : #000;
+}
+
+#avatar-dropdown-btn {
+
+  width : 60px;
+  height : 50px;
+  border-radius: 5px;
+}
+
+#avatar-top {
+
+  width : 60px;
+  height : 50px;
+  border-radius: 5px;
+}
+
+
+#like-btn{
+
+  border: 3px solid #36383F;
+  border-radius: 2px;
+  background: none;
+}
+
+#like-btn:hover {
+  background :#FFF ;
+  color : #222;
+
+}
+
+#fork-btn{
+
+  border: 3px solid #36383F;
+  border-radius: 2px;
+  background: none;
+}
+
+#fork-btn:hover {
+  background :#FFF ;
+  color : #222;
+
+}
+.fa-pencil {
+
+  color : #FD7F09;
+}
+
+#avatar-dropdown-btn{
+
+	cursor : pointer;
+
+}
+
+.project-info {
+
+	color : white;
+}

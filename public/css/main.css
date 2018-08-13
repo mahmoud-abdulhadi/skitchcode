@@ -1,0 +1,236 @@
+/*.editorHeader {
+	
+
+	background-color : #000 ; 
+
+	color : white ; 
+
+	padding : 5px ; 
+}
+
+
+
+iframe { 
+	display:block ; 
+	width :100% ; 
+	height : auto ; 
+	border:none ; 
+
+	background : white;
+}
+
+.settingButton {
+	
+
+	background : #343436 ; 
+	color : white ; 
+	border : 3px solid #343436 ; 
+	font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+	font-size: 1rem;
+	 line-height: 1.2;
+    display: inline-block;
+    outline: 0;
+    padding: 10px 16px;
+    margin: 0 10px 0 0;
+    position: relative;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none !important;
+    text-align: center;
+    font-weight: bold !important;
+    font-size : 1.3em ;
+
+}
+
+.settingButton:hover {
+	
+
+	border-top : 1px solid yellow ; 
+}
+
+.settingButton:active {
+	
+
+	transform : translateY(4px);
+	border : 0px ; 
+}
+
+.CodeMirror {
+	
+
+	font-size:14px;
+
+}
+
+.CodeMirror-hints {
+	
+
+	background : black;
+}
+
+.CodeMirror-hint { 
+
+	color : white ; 
+	font-size : 1.5em ; 
+}*/
+
+
+
+
+.navbar-item { 
+
+	font-size: 1.1em;
+ }
+
+ .navbar-brand h1{
+
+
+ 	font-size: 1.3em;
+
+ 	font-style: italic; 
+
+}
+
+
+
+.navbar-item:hover { 
+
+
+	font-weight: bold ;
+ }
+
+#postsLink:hover{
+
+
+
+	border-bottom : 3px solid green;
+}
+
+#discussionsLink:hover { 
+
+	border-bottom: 3px solid yellow ; 
+ }
+
+
+#skitchesLink:hover { 
+
+	border-bottom : 3px solid lightblue ;
+
+ }
+
+
+ .navbar-end button { 
+
+ 	background-color : #343436;
+
+ 	border : none;
+ 	color : white ;
+
+  }
+
+.navbar-end button:hover { 
+
+	background-color: #565658;
+
+	color : white;
+ }
+
+ #createButton:hover {
+
+   background-color: #565658;
+
+	color : white;
+
+ }
+
+
+ .navbar-dropdown a:hover {
+
+ 	background : #333;
+
+ }
+
+ #secondaryNav .command {
+ 	background-color : #000;
+
+ 	color : white;
+
+ 	border : 3px solid #565658;
+
+ }
+
+  #secondaryNav .command:hover {
+ 	background-color :  #565658;
+
+ 	color : white;
+
+ 	border : 3px solid #565658;
+
+ }
+
+ #secondaryNav .options{
+ 	background-color: #555;
+
+ }
+
+ #secondaryNav .options:hover{
+ 	background-color: #111;
+
+ }
+
+ .header-editor {
+
+
+ 	background-color : #000;
+
+ 	text-align: center;
+
+ 	display : inline;
+
+ 	
+ }
+
+.header-editor .title {
+
+
+	color : #FFF;
+}
+
+#third button {
+
+
+	background-color : #111;
+}
+
+#third button:hover { 
+
+	background-color: #565658;
+ }
+
+ #third #deleteButton:hover {
+ 		background-color: #F00 ; 
+
+ }
+
+
+
+
+
+
+#target {
+
+
+	width:100%;
+	min-height:  :600px;
+}
+
+body {
+
+	padding:0px; 
+
+	margin : 0px;
+}

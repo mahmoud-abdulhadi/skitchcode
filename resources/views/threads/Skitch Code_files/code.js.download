@@ -1,0 +1,465 @@
+var splitter = $('#editorContainer').height(1000).split({
+	orientaion : 'horizontal',
+	limit : 0,
+	position : '50%'
+
+});
+
+
+
+var config = {
+
+	themeHtml  : 'material',
+
+	themeCss : 'monokai',
+	themeJs : 'dracula'
+}; 
+
+
+//AutoComplete Code 
+
+
+var htmlEditor = CodeMirror.fromTextArea(document.querySelector('#htmlEditor'),{
+
+
+	mode : 'text/html',
+	lineNumbers : true,
+	lineWrapping : true,
+	theme : config.themeHtml,
+	profile : 'xml',
+	fullScreen : false,
+	autoCloseTags : true,
+	autoCloseBrackets : true,
+	matchTags : {bothTags : true},
+	lint : true, 
+	styleActiveLine : true,
+	scrollbarStyle :'overlay',
+	foldGutter : true,
+	gutters : ['CodeMirror-lint-markers','CodeMirror-linenumbers','CodeMirror-foldgutter'],
+	extraKeys : { 
+
+		'Qtrl-Q' : function(cm){cm.foldCode(cm.getCursor());} ,
+
+		'F11' : function(cm){
+
+			if(!cm.getOption('fullScreen')){
+
+				cm.setOption('fullScreen',true), 
+				$('.hsplitter').hide();
+			}else { 
+
+				cm.setOption('fullScreen',false);
+				$('.hsplitter').show();
+			}
+
+		},
+		'Esc' : function(cm){
+
+
+			if(cm.getOption('fullScreen')){
+				cm.setOption('fullScreen',false);
+				$('.hsplitter').show();
+				}
+			},
+		'Ctrl-J' : "toMatchingTag",
+		'Ctrl-Space' : function(cm){
+              cm.showHint({hint : CodeMirror.hint.html});
+		},
+		"Shift-Space" : function(cm){
+
+			cm.showHint({hint : CodeMirror.hint.anyword})
+		}  
+		}
+	
+
+});
+
+emmetCodeMirror(htmlEditor);
+
+
+var cssEditor = CodeMirror.fromTextArea(document.querySelector('#cssEditor'),{
+
+
+	mode : 'css',
+	lineNumbers : true,
+	lineWrapping : true,
+	theme : config.themeCss,
+	fullScreen : false,
+	autoCloseBrackets : true ,
+
+	lint : true, 
+	styleActiveLine : true,
+	scrollbarStyle: 'overlay',
+	styleSelectedText : true,
+	foldGutter : true,
+	gutters : ["CodeMirror-lint-markers","CodeMirror-linenumbers","CodeMirror-foldgutter"],
+	extraKeys : { 
+		'Qtrl-Q' : function(cm){cm.foldCode(cm.getCursor());} ,
+
+		'F11' : function(cm){
+
+			if(!cm.getOption('fullScreen')){
+
+				cm.setOption('fullScreen',true), 
+				$('.hsplitter').hide();
+			}else { 
+
+				cm.setOption('fullScreen',false);
+				$('.hsplitter').show();
+			}
+
+		},
+		'Esc' : function(cm){
+
+
+			if(cm.getOption('fullScreen')){
+				cm.setOption('fullScreen',false);
+				$('.hsplitter').show();
+			}
+
+		},
+		'Ctrl-Space' : 'autocomplete' ,
+		"Shift-Space" : function(cm){
+
+			cm.showHint({hint : CodeMirror.hint.anyword})
+		} 
+	}
+	
+});
+
+
+ 
+
+  
+
+var jsEditor = CodeMirror.fromTextArea(document.querySelector('#jsEditor'),{
+
+
+	mode : 'javascript',
+	lineNumbers : true,
+	lineWrapping : true,
+	theme : config.themeJs ,
+	fullScreen : false,
+	autoCloseBrackets : true,
+	foldGutter : true,
+	gutters : ["CodeMirror-lint-markers","CodeMirror-linenumbers","CodeMirror-foldgutter"],
+	lint : true,
+	
+	styleActiveLine:true,
+	scrollbarStyle : 'overlay',
+	extraKeys : { 
+		'Qtrl-Q' : function(cm){cm.foldCode(cm.getCursor());} ,
+
+		'F11' : function(cm){
+
+			if(!cm.getOption('fullScreen')){
+
+				cm.setOption('fullScreen',true), 
+				$('.hsplitter').hide();
+			}else { 
+
+				cm.setOption('fullScreen',false);
+				$('.hsplitter').show();
+			}
+
+		},
+		'Esc' : function(cm){
+
+
+			if(cm.getOption('fullScreen')){
+				cm.setOption('fullScreen',false);
+				$('.hsplitter').show();
+			}
+
+		},
+		"Ctrl-Space" : "autocomplete",
+		"Shift-Space" : function(cm){
+
+			cm.showHint({hint : CodeMirror.hint.anyword})
+		} 
+	}
+});
+
+
+
+/*Split(['#editor1','#editor2']);*/
+
+
+function enjectCode(html,css,js,target){
+
+	template = `
+				<html>
+
+				<head>
+				   <meta charset="utf-8"/>
+				   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+
+				   <style>
+				   			${css}
+				   </style>
+				</head>
+
+				<body>
+
+					${html}
+
+					<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+					<script>
+							
+						${js}
+					</script>
+				</body>
+
+				</html>
+
+
+			`;
+/*
+
+			target.contentDocument.documentElement.innerHTML = template ; 
+
+
+
+			//evaluate the java script code 
+
+			var win = target.contentWindow ; 
+
+			var scripts = target.contentDocument.scripts[1];
+
+
+			try {
+				win.eval(scripts.innerHTML);
+
+			}catch(err){
+
+				target.contentDocument.documentElement.innerHTML = err.message ; 
+
+
+			}
+		*/	
+
+}
+
+function buildTemplate(html,css,js){
+
+
+	return `<html>
+
+				<head>
+				   <meta charset="utf-8"/>
+					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+				   <style>
+				   			${css}
+				   </style>
+				</head>
+
+				<body>
+
+					${html}
+
+				<script
+				  src="https://code.jquery.com/jquery-3.3.1.min.js"
+				  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				  crossorigin="anonymous"></script>
+									<script>
+							
+						${js}
+					</script>
+				</body>
+
+				</html>`;
+}
+
+function runCode(){
+
+
+
+	var html = htmlEditor.getValue(); 
+
+
+	var css = cssEditor.getValue();
+
+	var js = jsEditor.getValue();
+
+	var template = buildTemplate(html,css,js);
+
+
+	//var target = document.querySelector('#target');
+
+
+	//Get The Preview Element 
+
+	var previewFrame = document.getElementById('target');
+
+	//Get The document of the iframe 
+
+	var preview  = previewFrame.contentWindow ? previewFrame.contentWindow : previewFrame.contentDocument.document ? previewFrame.contentDocument.document : previewFrame.contentDocument;
+
+	//open the document 
+
+	preview.document.open();
+
+
+	//inject the code Template 
+	preview.document.write(template); 
+
+	
+
+	//close the document 
+	preview.document.close();
+
+
+
+
+
+	 //enjectCode(html,css,js,target); 
+
+
+}
+
+
+
+
+
+/* The Run Button Functionality */ 
+
+var runButton = document.querySelector('#btnRun');
+
+
+runButton.addEventListener('click',runCode); 
+
+
+
+//Get Instance of reset Button 
+
+var resetButton = document.querySelector('#resetBtn');
+
+
+//Reset Environment Function 
+
+function reset(){
+
+
+	//empty the html editor 
+
+	htmlEditor.getDoc().setValue('');
+
+
+	//empty the css editor
+
+	cssEditor.getDoc().setValue(''); 
+
+	//empty the js Editor 
+
+
+	jsEditor.getDoc().setValue('');
+
+
+	//empty the frame 
+
+	target.contentDocument.documentElement.innerHTML = ''; 
+}
+
+
+
+//attach event listener to the reset button 
+
+resetButton.addEventListener('click',reset);
+
+//AutoUpdate Choice Handling 
+
+//choice checkbox handler 
+
+
+//handle event 
+var syncRun = _.debounce(runCode,1000);
+
+$('#runChoice').change(function(){
+
+	if(this.checked){
+		/*Automatically Run The Code while Typing */ 
+
+		htmlEditor.on('change',syncRun);
+		cssEditor.on('change',syncRun);
+		jsEditor.on('change',syncRun);
+
+	}else {
+		
+		htmlEditor.off('change',syncRun);
+		cssEditor.off('change',syncRun);
+		jsEditor.off('change',syncRun);
+	}
+});
+
+//Refresh Page functionality 
+
+//get handler of the refresh button 
+
+var refreshBtn = document.querySelector('#refreshBtn');
+//attach event to the refresh button click 
+if(refreshBtn){
+refreshBtn.addEventListener('click',function(){
+
+	location.reload();
+
+})
+};
+
+
+
+//Settings modal 
+
+
+function selectTheme(editor,type){
+	var themePicker = document.getElementById('theme-picker-'+type);
+
+	var theme = themePicker.options[themePicker.selectedIndex].textContent;
+    editor.setOption("theme", theme);
+
+}
+
+var htmlSettingsButton = document.querySelector('#htmlSettings .settings-save-btn');
+
+var cssSettingsButton = document.querySelector('#cssSettings .settings-save-btn');
+
+var jsSettingsButton = document.querySelector('#jsSettings .settings-save-btn');
+
+if(htmlSettingsButton){
+htmlSettingsButton.addEventListener('click',function(){
+
+
+	selectTheme(htmlEditor,'html');
+
+	$('.modal').modal('hide');
+
+});
+}
+
+if(cssSettingsButton){
+cssSettingsButton.addEventListener('click',function(){
+
+
+	selectTheme(cssEditor,'css');
+
+	$('.modal').modal('hide');
+
+});
+}
+
+if(jsSettingsButton){
+jsSettingsButton.addEventListener('click',function(){
+
+
+	selectTheme(jsEditor,'js');
+
+	$('.modal').modal('hide');
+
+});
+}
+
+
+ 
+
+
+
+
